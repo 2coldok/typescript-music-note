@@ -1,1 +1,23 @@
-"use strict";
+import { BaseComponent } from "../../component.js";
+export class TextSectionInput extends BaseComponent {
+    constructor() {
+        super(`<div>
+             <div class="form__container">
+                 <label for="title">타이틀입력</label>
+                 <input type="text" id="title">
+            </div>
+            <div class="form__container">
+                  <label for="body">바디</label>
+                  <textarea type="text" row="3" id="body"></textarea>
+            </div>
+          </div>`);
+    }
+    get title() {
+        const element = this.element.querySelector('#title');
+        return element.value;
+    }
+    get body() {
+        const element = this.element.querySelector('#body');
+        return element.value;
+    }
+}
