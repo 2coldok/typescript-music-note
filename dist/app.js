@@ -13,7 +13,7 @@ class App {
         note.attachTo(appRoot, 'beforeend');
         const todo = new TodoComponent('your Todo title', 'your todo');
         todo.attachTo(appRoot, 'beforeend');
-        const video = new VideoComponent('your video title', 'https://www.youtube.com/embed/aoD5h8FkJ4c');
+        const video = new VideoComponent('your video title', 'https://www.youtube.com/watch?v=aoD5h8FkJ4c');
         video.attachTo(appRoot, 'beforeend');
     }
 }

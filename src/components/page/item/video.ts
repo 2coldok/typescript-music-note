@@ -5,29 +5,34 @@ export class VideoComponent extends BaseComponent<HTMLElement> {
     super(`<section class="video">
              <div class="video__player"><iframe class="video__iframe"></iframe></div>
              <h3 class="video__title"></h3>
-           </section>`)
+           </section>`);
     
     const iframe = this.element.querySelector('.video__iframe')! as HTMLIFrameElement;
-    iframe.src = 'https://www.youtube.com/embed/aoD5h8FkJ4c';
-    console.log(url)
+    iframe.src = this.convertToEmbededURL(url);
 
     const titleElement = this.element.querySelector('.video__title')! as HTMLHeadingElement;
     titleElement.textContent = title;
   }
+
+  private convertToEmbededURL(url: string): string {
+    return `https://www.youtube.com/embed/${this.getVideoId(url)}`;
+  }
+
+  private getVideoId(youtubeURL : string): string | undefined {
+    if (youtubeURL.includes('?si=')) {
+      const array = youtubeURL.slice(0, youtubeURL.indexOf('?si=')).split('/');
+      const videoId: string | undefined = array[array.length - 1];
+      return videoId;
+    }
+  
+    if (youtubeURL.includes('&list=')) {
+      const array = youtubeURL.slice(0, youtubeURL.indexOf('&list=')).split('watch?v=');
+      const videoId: string | undefined = array[array.length - 1];
+      return videoId
+    }
+  
+    const array = youtubeURL.split('watch?v=');
+    const videoId: string | undefined = array[array.length - 1];
+    return videoId;
+  } 
 }
-
-// function getVideoId(youtubeURL : string): string {
-//   if (youtubeURL.includes('?si=')) {
-//     const array = youtubeURL.slice(0, youtubeURL.indexOf('?si=')).split('/');
-//     const videoId = array[array.length - 1];
-//     return videoId;
-//   }
-
-//   if (youtubeURL.includes('&list=')) {
-//     const videoId = youtubeURL.slice(0, youtubeURL.indexOf('&list=')).split('watch?v=').at(-1);
-//     return videoId;
-//   }
-
-//   const videoId = youtubeURL.split('watch?v=').at(-1);
-//   return videoId;
-// };

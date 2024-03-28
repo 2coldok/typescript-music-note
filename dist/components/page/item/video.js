@@ -6,9 +6,26 @@ export class VideoComponent extends BaseComponent {
              <h3 class="video__title"></h3>
            </section>`);
         const iframe = this.element.querySelector('.video__iframe');
-        iframe.src = 'https://www.youtube.com/embed/aoD5h8FkJ4c';
-        console.log(url);
+        iframe.src = this.convertToEmbededURL(url);
         const titleElement = this.element.querySelector('.video__title');
         titleElement.textContent = title;
+    }
+    convertToEmbededURL(url) {
+        return `https://www.youtube.com/embed/${this.getVideoId(url)}`;
+    }
+    getVideoId(youtubeURL) {
+        if (youtubeURL.includes('?si=')) {
+            const array = youtubeURL.slice(0, youtubeURL.indexOf('?si=')).split('/');
+            const videoId = array[array.length - 1];
+            return videoId;
+        }
+        if (youtubeURL.includes('&list=')) {
+            const array = youtubeURL.slice(0, youtubeURL.indexOf('&list=')).split('watch?v=');
+            const videoId = array[array.length - 1];
+            return videoId;
+        }
+        const array = youtubeURL.split('watch?v=');
+        const videoId = array[array.length - 1];
+        return videoId;
     }
 }
