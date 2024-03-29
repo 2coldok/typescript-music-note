@@ -26,6 +26,9 @@ export class VideoComponent extends BaseComponent {
         }
         const array = youtubeURL.split('watch?v=');
         const videoId = array[array.length - 1];
+        if (videoId === null || videoId === void 0 ? void 0 : videoId.includes('&')) {
+            return videoId.split('&')[0];
+        }
         return videoId;
     }
 }
