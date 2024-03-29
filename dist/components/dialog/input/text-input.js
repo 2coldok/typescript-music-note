@@ -3,12 +3,10 @@ export class TextSectionInput extends BaseComponent {
     constructor() {
         super(`<div>
              <div class="form__container">
-                 <label for="title">타이틀입력</label>
-                 <input type="text" id="title">
+                 <input type="text" id="title" placeholder="제목">
             </div>
             <div class="form__container">
-                  <label for="body">바디</label>
-                  <textarea type="text" row="3" id="body"></textarea>
+                  <textarea type="text" row="3" id="body" placeholder="내용"></textarea>
             </div>
           </div>`);
     }

@@ -3,9 +3,13 @@ export class InputDialog extends BaseComponent {
     constructor() {
         super(`<dialog class="dialog">
              <div class="dialog__container">
-                <button class="close">&times;</button>
+              
                 <div id="dialog__body"></div>
-                <button class="dialog__submit">ADD</button>
+                <div class="button__container">
+                  <button class="dialog__submit">Add</button>
+                  <button class="close" id="dialog__close">Delete</button>
+                </div>
+                
              </div>
           </dialog>`);
         const closeBtn = this.element.querySelector('.close');

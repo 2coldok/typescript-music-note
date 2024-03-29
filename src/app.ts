@@ -2,9 +2,9 @@ import { Component } from "./components/component.js";
 import { InputDialog } from "./components/dialog/dialog.js";
 import { MediaSectionInput } from "./components/dialog/input/media-input.js";
 import { TextSectionInput } from "./components/dialog/input/text-input.js";
-import { ImageComponent } from "./components/page/item/image.js";
 import { NoteComponent } from "./components/page/item/note.js";
-import { TodoComponent } from "./components/page/item/todo.js";
+// import { ImageComponent } from "./components/page/item/image.js";
+// import { TodoComponent } from "./components/page/item/todo.js";
 import { VideoComponent } from "./components/page/item/video.js";
 import { Composable, PageComponent, PageItemComponent } from "./components/page/page.js";
 
@@ -18,11 +18,11 @@ class App {
     this.page = new PageComponent(PageItemComponent);
     this.page.attachTo(appRoot);
 
-    this.bindElementToDialog<MediaSectionInput>(
-      '#new-image',
-      MediaSectionInput,
-      (input: MediaSectionInput) => new ImageComponent(input.title, input.url)
-    );
+    // this.bindElementToDialog<MediaSectionInput>(
+    //   '#new-image',
+    //   MediaSectionInput,
+    //   (input: MediaSectionInput) => new ImageComponent(input.title, input.url)
+    // );
 
     this.bindElementToDialog<MediaSectionInput>(
       '#new-video',
@@ -36,11 +36,11 @@ class App {
       (input: TextSectionInput) => new NoteComponent(input.title, input.body)
     );
 
-    this.bindElementToDialog<TextSectionInput>(
-      '#new-todo',
-      TextSectionInput,
-      (input: TextSectionInput) => new TodoComponent(input.title, input.body)
-    );
+    // this.bindElementToDialog<TextSectionInput>(
+    //   '#new-todo',
+    //   TextSectionInput,
+    //   (input: TextSectionInput) => new TodoComponent(input.title, input.body)
+    // );
     
    
 

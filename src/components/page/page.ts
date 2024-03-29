@@ -23,10 +23,10 @@ export class PageItemComponent extends BaseComponent<HTMLElement> implements Sec
 
   constructor() {
     super(`<li class="page-item">
-             <section class="page-item__body"></section>
-             <div class="page-item__controls">
-               <button class="close">&times;</button>
-             </div>
+              <div class="page-item__controls">
+                <button class="close">delete</button>
+              </div>
+              <section class="page-item__body"></section>
           </li>`)
     const closeBtn = this.element.querySelector('.close')! as HTMLButtonElement;
     closeBtn.onclick = () => {

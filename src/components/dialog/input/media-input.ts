@@ -4,12 +4,10 @@ export class MediaSectionInput extends BaseComponent<HTMLElement> {
   constructor() {
     super(`<div>
              <div class="form__container">
-                 <label for="title">타이틀입력</label>
-                 <input type="text" id="title">
+                 <input type="text" id="title" placeholder="음악 제목">
             </div>
             <div class="form__container">
-                  <label for="url">유얼엘</label>
-                  <input type="text" id="url">
+                  <input type="text" id="url" placeholder="유튜브 링크">
             </div>
           </div>`);
   }
@@ -24,3 +22,6 @@ export class MediaSectionInput extends BaseComponent<HTMLElement> {
     return element.value;
   }
 }
+
+// <label for="title">타이틀</label>
+// <label for="url">유얼엘</label>
