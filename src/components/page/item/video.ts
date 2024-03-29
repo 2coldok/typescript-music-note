@@ -33,6 +33,10 @@ export class VideoComponent extends BaseComponent<HTMLElement> {
   
     const array = youtubeURL.split('watch?v=');
     const videoId: string | undefined = array[array.length - 1];
+    
+    if (videoId?.includes('&')) {
+      return videoId.split('&')[0];
+    }
     return videoId;
   } 
 }
