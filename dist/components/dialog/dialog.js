@@ -7,7 +7,7 @@ export class InputDialog extends BaseComponent {
                 <div id="dialog__body"></div>
                 <div class="button__container">
                   <button class="dialog__submit">Add</button>
-                  <button class="close" id="dialog__close">Delete</button>
+                  <button class="close" id="dialog__close">Cancel</button>
                 </div>
                 
              </div>

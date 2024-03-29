@@ -93,4 +93,3 @@ class App {
 }
 
 new App(document.querySelector('.document')! as HTMLElement, document.body);
-

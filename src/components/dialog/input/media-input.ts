@@ -4,10 +4,10 @@ export class MediaSectionInput extends BaseComponent<HTMLElement> {
   constructor() {
     super(`<div>
              <div class="form__container">
-                 <input type="text" id="title" placeholder="음악 제목">
+                 <input type="text" id="title" placeholder="제목">
             </div>
             <div class="form__container">
-                  <input type="text" id="url" placeholder="유튜브 링크">
+                  <input type="text" id="url" placeholder="유튜브 비디오 링크">
             </div>
           </div>`);
   }
